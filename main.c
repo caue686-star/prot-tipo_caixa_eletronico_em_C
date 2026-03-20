@@ -6,9 +6,10 @@ int main(){
 int tentativa;
 int chance = 3;
 float saldo = 200.00;
-float valorSaque, sub;
+float valorSaque, valorDp, sub;
 int opcao;
 int senha = 3388;
+
 
 printf("--------------------------\n");
 printf("bem vindo(a) a este banco!\n");
@@ -96,7 +97,32 @@ if(saqueInt == 0){
 }
 
 case 3:
-    printf("no momento ainda estou trabalhando nisso. desculpa!!!!");
+    printf("->DEPOSITO<-\n");
+    printf("digite a quantia de deseja depositar: R$");
+    scanf("%f", &valorDp);
+
+    if(valorDp < 1){
+        printf("você não pode depositar essa quantia!\n");
+        break;
+    }
+    while(chance > 0){
+        printf("digite sua senha: ");
+        scanf("%d", &tentativa);
+        if ( tentativa == senha){
+            printf("senha correta! deposito feito!\n");
+            saldo = valorDp + saldo;
+            printf("seu saldo atual é de: R$%.2f\n", saldo);
+            break;
+        }else{
+            chance--;
+            if(chance > 0){
+                printf("SENHA INCORRETA! tente novamente: ");
+            }else{
+                printf("ACESSO BLOQUEADO!");
+            }
+        }
+    }
+    break;
 
 case 4:
     printf("ate breve!\n");
