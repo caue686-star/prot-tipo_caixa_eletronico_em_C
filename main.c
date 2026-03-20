@@ -104,7 +104,7 @@ case 3:
     printf("digite a quantia de deseja depositar: R$");
     scanf("%f", &valorDp);//adicionar valor que deseja depositar
 
-    if(valorDp < 1){//se você tentar depositar 1 real ou menos, você será barrado!
+    if(valorDp < 2){//se você tentar depositar 1 real ou menos, você será barrado!
         printf("você não pode depositar essa quantia!\n");
         break;
     }
