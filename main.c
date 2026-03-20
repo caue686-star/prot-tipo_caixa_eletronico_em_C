@@ -43,7 +43,7 @@ case 1:
             }
         }
     }
-
+    break;
 case 2:
     printf("->Realizar Saque<-\n");
     printf("notas disponiveis [2, 5, 10, 20, 50, 100, 200]\n");
@@ -64,7 +64,7 @@ case 2:
         if(chance > 0){
             printf("SENHA INCORRETA! tente novamente:\n");
         }else{
-            printf("ACESSO BLOQUEADO!");
+            printf("ACESSO BLOQUEADO!\n\n");
         return 0;
         }
         }
@@ -98,7 +98,7 @@ if(saqueInt == 0){
     }
     printf("agradecemos a preferencia!");
 }
-
+    break;
 case 3:
     printf("->DEPOSITO<-\n");
     printf("digite a quantia de deseja depositar: R$");
