@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1773977426 source:c:\users\cauep\onedrive\documents\codeblocks\c-codes\caixa_eletronico\caixa_eletronico\main.c
+	<stdio.h>
+	<stdlib.h>
+
