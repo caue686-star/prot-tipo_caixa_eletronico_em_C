@@ -10,7 +10,7 @@ float valorSaque, valorDp, sub;
 int opcao;
 int senha = 3388;
 
-//tela inicial para escolher as opÁıes
+//tela inicial para escolher as op√ß√µes
 printf("--------------------------\n");
 printf("bem vindo(a) a este banco!\n");
 printf("--------------------------\n");
@@ -22,23 +22,23 @@ printf("--------------------------\n");
 printf("escolha uma: ");
 scanf("%d", &opcao);
 
-//o switch serve para que as opÁıes realmente funcionem na hora de serem escolhidas
+//o switch serve para que as op√ß√µes realmente funcionem na hora de serem escolhidas
 switch(opcao){
 case 1:
     printf("->Consultar Saldo<-\n");
-    while(chance > 0){ //enquanto a quantiade de chances for maior que "0", vocÍ pode tentar digitar sua senha
+    while(chance > 0){ //enquanto a quantiade de chances for maior que "0", voc√™ pode tentar digitar sua senha
         printf("digite sua senha: ");
         scanf("%d", &tentativa);
-        if(tentativa == senha){ //se a senha digitada for correta, vocÍ consegue verificar saldo
+        if(tentativa == senha){ //se a senha digitada for correta, voc√™ consegue verificar saldo
             printf("senha correta!\n");
-            printf("seu saldo È de: R$ %.2f\n", saldo);
+            printf("seu saldo √© de: R$ %.2f\n", saldo);
             break;
         }else{
-        chance--; //se vocÍ errar a senha, vocÍ perde uma chance
+        chance--; //se voc√™ errar a senha, voc√™ perde uma chance
         if(chance > 0){
         printf("senha incorreta! tente novamente:\n");
             }else{
-            printf("acesso bloqueado!"); //se as 3 chances acabarem, vocÍ n„o pode verificar seu saldo
+            printf("acesso bloqueado!"); //se as 3 chances acabarem, voc√™ n√£o pode verificar seu saldo
             return 0;
             }
         }
@@ -49,13 +49,13 @@ case 2:
     printf("notas disponiveis [2, 5, 10, 20, 50, 100, 200]\n");
     printf("digite o valor do saque: R$");
     scanf("%f", &valorSaque); //digitar o valor de saque
-    if(valorSaque > saldo){ //se vocÍ tentar digitar um valor maior do que vocÍ tem na sua conta, n„o ir· funcionar
+    if(valorSaque > saldo){ //se voc√™ tentar digitar um valor maior do que voc√™ tem na sua conta, n√£o ir√° funcionar
         printf("saldo insuficiente... :(");
         return 0;
         }
     while(chance > 0){
         printf("digite sua senha: ");
-        -scanf("%d", &tentativa);
+        scanf("%d", &tentativa);
         if (tentativa == senha){
             printf("senha correta!\n");
             break;
@@ -70,28 +70,28 @@ case 2:
         }
     }
 
-    sub = saldo - valorSaque; //diminui a quantidade que vocÍ sacou do seu saldo
+    sub = saldo - valorSaque; //diminui a quantidade que voc√™ sacou do seu saldo
 printf("saldo atual: R$%2.f\n",sub);
 
-//a partir de agora, È a maquina escolhendo as notas que vai te entregar, de acordo com o valor do saque
-// como n„o È possÌvel dividir um valor float com um valor int, criei uma vari·vel int para armazenar o valor do float
+//a partir de agora, √© a maquina escolhendo as notas que vai te entregar, de acordo com o valor do saque
+// como n√£o √© poss√≠vel dividir um valor float com um valor int, criei uma vari√°vel int para armazenar o valor do float
 int saqueInt = (int)valorSaque;
 if(saqueInt == 0){
-    printf("n„o ha cedula para sacar\n");
+    printf("n√£o ha cedula para sacar\n");
 }else{
     printf("valor para cliente: R$%.2f\n", valorSaque);
     printf("distribuicao de notas:\n");
 
-//apenas demarcando quais notas s„o possÌveis sacar
+//apenas demarcando quais notas s√£o poss√≠veis sacar
     int notas[]={200, 100, 50, 20, 10, 5, 2};
     int i = 0;
     int quantidadeNotas;
-    for(i = 0; i < 7; i++){ // o 7 aparece pois s„o 7 tipos de notas diferentes
+    for(i = 0; i < 7; i++){ // o 7 aparece pois s√£o 7 tipos de notas diferentes
             quantidadeNotas = saqueInt/notas[i];//divide o valor do saque de acordo com as notas
     if(quantidadeNotas > 0){
         printf("%d nota(s) de R$%d\n", quantidadeNotas, notas[i]);
     }
-    saqueInt = saqueInt%notas[i]; //mostra quantas notas de qual valor È preciso entregar para ser equivalente a quantiade de saque
+    saqueInt = saqueInt%notas[i]; //mostra quantas notas de qual valor √© preciso entregar para ser equivalente a quantiade de saque
     }
     if (saqueInt > 0){
         printf("restaram: R$%d(entregue em moeda)", saqueInt);
@@ -104,8 +104,8 @@ case 3:
     printf("digite a quantia de deseja depositar: R$");
     scanf("%f", &valorDp);//adicionar valor que deseja depositar
 
-    if(valorDp < 2){//se vocÍ tentar depositar 1 real ou menos, vocÍ ser· barrado!
-        printf("vocÍ n„o pode depositar essa quantia!\n");
+    if(valorDp < 2){//se voc√™ tentar depositar 1 real ou menos, voc√™ ser√° barrado!
+        printf("voc√™ n√£o pode depositar essa quantia!\n");
         break;
     }
     while(chance > 0){
@@ -114,7 +114,7 @@ case 3:
         if ( tentativa == senha){
             printf("senha correta! deposito feito!\n");
             saldo = valorDp + saldo; //quantia adicionada ao seu saldo
-            printf("seu saldo atual È de: R$%.2f\n", saldo);
+            printf("seu saldo atual √© de: R$%.2f\n", saldo);
             break;
         }else{
             chance--;
